@@ -1,0 +1,87 @@
+/* src/Card.css */
+
+.card-item {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* グリッドのセルの高さいっぱいに広がるように */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    background-color: #5a6a7a;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 9px 9px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .card-cost {
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    border: 2px solid #5a6a7a;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  }
+  
+  .card-name {
+    margin: 0;
+    font-size: 1.1em;
+    flex-grow: 1; /* 名前が長くても改行されるように */
+  }
+  
+  .card-body {
+    padding: 12px;
+    flex-grow: 1; /* この要素が残りのスペースを埋める */
+  }
+  
+  .card-type {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #667;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+  }
+  
+  .card-text {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  .card-footer {
+    padding: 12px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 9px 9px;
+    text-align: left;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
