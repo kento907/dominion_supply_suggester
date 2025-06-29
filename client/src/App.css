@@ -273,8 +273,13 @@ body {
   font-size: 1em;
   margin-bottom: 20px;
   resize: vertical;
+  
+  /* ▼▼▼ これらを追加 ▼▼▼ */
+  display: block; /* ブロック要素であることを保証 */
+  margin-left: auto;
+  margin-right: auto;
+  /* ▲▲▲ */
 }
-
 .submit-button {
   padding: 10px 25px;
   font-size: 1.1em;
@@ -283,10 +288,15 @@ body {
   cursor: pointer;
   border-radius: 5px;
   border: 1px solid #5a3e2b;
-  background: linear-gradient(to bottom, #8fbc8f, #79a179); /* 落ち着いた緑 */
+  background: linear-gradient(to bottom, #8fbc8f, #79a179);
   color: #fff;
   text-shadow: 1px 1px 2px #3e4a3e;
   transition: all 0.1s ease-in-out;
+
+  /* ▼▼▼ これらを追加 ▼▼▼ */
+  display: block;
+  margin: 0 auto;
+  /* ▲▲▲ */
 }
 .submit-button:hover {
   background: linear-gradient(to bottom, #79a179, #638663);
