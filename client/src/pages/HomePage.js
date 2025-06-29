@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import Card from './Card';
+import '../App.css';
+import Card from '../Card';
 
 const MIN_COST = 2;
 const MAX_COST = 6;
