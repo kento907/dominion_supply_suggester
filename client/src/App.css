@@ -323,15 +323,17 @@ body {
   align-items: center;
 }
 .nav-link {
-  color: #fff;
+  color: #5a3e2b; /* 白から濃い茶色に変更 */
   text-decoration: none;
   font-family: 'Noto Serif JP', serif;
+  font-weight: bold; /* 少し太字にする */
   padding: 8px 15px;
   border-radius: 5px;
   transition: background-color 0.2s;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); /* 可読性のためのわずかな影 */
 }
 .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* --- ランキングページのスタイル --- */
@@ -383,8 +385,9 @@ body {
   gap: 8px;
 }
 .card-name-chip {
-  background: #fff;
-  border: 1px solid #ddd;
+  background-color: #e0c9a6; /* 背景を羊皮紙色に */
+  color: #5a3e2b;           /* 文字色を濃い茶色に */
+  border: 1px solid #c9b89b; /* テーマに合わせた枠線 */
   padding: 4px 10px;
   border-radius: 15px;
   font-size: 0.9em;
