@@ -168,7 +168,6 @@ function HomePage() {
 
   return (
     <div className="App">
-      <header className="App-header"><h1>Dominion Supply Suggester</h1></header>
       <div className="filter-container">
         <div className="filter-section">
           <h3>テーマ (Tags)</h3>
