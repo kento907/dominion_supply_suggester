@@ -6,8 +6,7 @@
 
 **🔗 公開アプリケーションURL:** [https://dominion-supply-suggester.onrender.com/](https://dominion-supply-suggester.onrender.com/)
 
-![アプリのスクリーンショット](https://i.imgur.com/gK1V8lT.png)
-*(ここにあなたのアプリのスクリーンショット画像をアップロードしてURLを貼り替えることをお勧めします)*
+![アプリのスクリーンショット](./img/dominion_supply_suggester_homepage.png)
 
 ---
 
