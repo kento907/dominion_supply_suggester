@@ -226,3 +226,88 @@ body {
   border-radius: 8px;
   grid-column: 1 / -1; /* グリッドレイアウトで横幅いっぱい使う */
 }
+
+/* === 評価フォームのためのCSS (追記) === */
+
+.rating-container {
+  background-color: #e0c9a6; /* 巻物のような色 */
+  background-image: url('https://www.transparenttextures.com/patterns/old-paper-2.png');
+  padding: 30px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #c9b89b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.rating-container h2 {
+  font-family: 'Cinzel', serif;
+  color: #4a2c2a;
+  margin-top: 0;
+}
+
+.star-rating {
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 2.5em;
+  color: #c9b89b; /* 未選択の星の色 */
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star.active,
+.star:hover {
+  color: #ffc107; /* 金貨のような黄色 */
+}
+
+.comment-box {
+  width: 100%;
+  max-width: 600px;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #c9b89b;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1em;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 10px 25px;
+  font-size: 1.1em;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #5a3e2b;
+  background: linear-gradient(to bottom, #8fbc8f, #79a179); /* 落ち着いた緑 */
+  color: #fff;
+  text-shadow: 1px 1px 2px #3e4a3e;
+  transition: all 0.1s ease-in-out;
+}
+.submit-button:hover {
+  background: linear-gradient(to bottom, #79a179, #638663);
+}
+.submit-button:disabled {
+  background: #b0a698;
+  cursor: not-allowed;
+}
+
+.rating-feedback {
+  padding: 15px;
+  border-radius: 5px;
+}
+.rating-feedback.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+.rating-feedback.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  margin-top: 10px;
+}
