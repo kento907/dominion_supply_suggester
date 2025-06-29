@@ -382,7 +382,7 @@ body {
 .supply-display-mini {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
 .card-name-chip {
   background-color: #e0c9a6; /* 背景を羊皮紙色に */
