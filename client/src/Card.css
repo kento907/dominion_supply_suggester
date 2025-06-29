@@ -1,87 +1,98 @@
-/* src/Card.css */
-
+/* カード全体のスタイル */
 .card-item {
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* グリッドのセルの高さいっぱいに広がるように */
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .card-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-header {
-    background-color: #5a6a7a;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 9px 9px 0 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .card-cost {
-    background-color: #fff;
-    color: #333;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
-    border: 2px solid #5a6a7a;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
-  }
-  
-  .card-name {
-    margin: 0;
-    font-size: 1.1em;
-    flex-grow: 1; /* 名前が長くても改行されるように */
-  }
-  
-  .card-body {
-    padding: 12px;
-    flex-grow: 1; /* この要素が残りのスペースを埋める */
-  }
-  
-  .card-type {
-    font-size: 0.8em;
-    font-weight: bold;
-    color: #667;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-    margin: 0 0 10px 0;
-  }
-  
-  .card-text {
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin: 0;
-  }
-  
-  .card-footer {
-    padding: 12px;
-    background-color: #f7f7f7;
-    border-top: 1px solid #eee;
-    border-radius: 0 0 9px 9px;
-    text-align: left;
-  }
-  
-  .tag {
-    display: inline-block;
-    background-color: #e0e0e0;
-    color: #555;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
+  background: #fdf6e3; /* 羊皮紙の色 */
+  background-image: url('https://www.transparenttextures.com/patterns/old-paper-2.png');
+  border: 1px solid #c9b89b;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 280px; /* カードの高さを固定 */
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden; /* 角丸を効かせるため */
+}
+
+.card-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* カードヘッダー */
+.card-header {
+  color: #fff;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #8c6d46;
+  background-color: #7a5c43;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+
+.card-cost {
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  border: 2px solid #8c6d46;
+  flex-shrink: 0; /* 縮まないように */
+}
+
+.card-name {
+  margin: 0;
+  font-size: 1.1em;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* カード本体 */
+.card-body {
+  padding: 12px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.card-type {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #6d4c41;
+  text-transform: uppercase; /* 大文字に */
+  letter-spacing: 1px;
+  border-bottom: 1px solid #d3c3a3;
+  padding-bottom: 5px;
+  margin: 0 0 10px 0;
+}
+
+.card-text {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* カードフッター (タグ表示) */
+.card-footer {
+  padding: 10px 12px;
+  background-color: rgba(210, 180, 140, 0.2); /* 薄い茶色 */
+  border-top: 1px solid #d3c3a3;
+  text-align: left;
+  min-height: 48px; /* 高さを確保 */
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e0c9a6;
+  color: #5a3e2b;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #c9b89b;
+}

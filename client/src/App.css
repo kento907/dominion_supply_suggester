@@ -1,30 +1,44 @@
+/* --- 全体のテーマ設定 --- */
+body {
+  background-color: #382e25; /* 背景を濃い茶色に */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* 木目調のテクスチャ */
+  color: #3d3d3d;
+}
+
 .App {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Noto Serif JP', serif; /* 日本語用の基本フォント */
 }
 
+/* --- ヘッダー: 巻物のようなデザイン --- */
 .App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
+  background: linear-gradient(to right, #e0c9a6, #f2e2c6, #e0c9a6);
+  color: #5a3e2b;
+  padding: 10px 20px;
+  border-bottom: 2px solid #8c6d46;
+  border-top: 2px solid #8c6d46;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
 }
 
-.error-message {
-  color: #d8000c;
-  background-color: #ffbaba;
-  border: 1px solid #d8000c;
-  padding: 15px;
-  border-radius: 8px;
+.App-header h1 {
+  font-family: 'Cinzel', serif; /* 見出し用のフォント */
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  margin: 0;
+  padding: 10px 0;
 }
 
-/* === フィルター機能のためのCSS === */
 
+/* --- フィルターエリア: 司令室の机の上 --- */
 .filter-container {
-  background-color: #f0f2f5;
-  padding: 20px;
+  background-color: rgba(245, 235, 218, 0.9); /* 少し透けた羊皮紙色 */
+  padding: 20px 30px;
   margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  border: 1px solid #c9b89b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .filter-section {
@@ -32,12 +46,24 @@
 }
 
 .filter-section h3 {
+  font-family: 'Cinzel', serif;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: left;
-  color: #333;
+  color: #4a2c2a;
+  border-bottom: 1px solid #d3c3a3;
+  padding-bottom: 5px;
 }
 
+.filter-section p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+
+/* --- 各種フィルターのスタイル --- */
 .tag-filters {
   display: flex;
   flex-wrap: wrap;
@@ -49,19 +75,18 @@
   align-items: center;
   gap: 5px;
   background-color: #fff;
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 15px;
   cursor: pointer;
   border: 1px solid #ddd;
   transition: background-color 0.2s, border-color 0.2s;
-  user-select: none; /* テキスト選択を防ぐ */
+  user-select: none;
 }
-
 .checkbox-label:hover {
-  background-color: #eef;
+  background-color: #f7f0e3;
 }
-
 .checkbox-label input {
+  accent-color: #7a5c43; /* チェックの色を変更 */
   cursor: pointer;
 }
 
@@ -75,99 +100,40 @@
   flex: 1;
   text-align: left;
 }
-
 .slider-wrapper label {
   display: block;
   margin-bottom: 5px;
 }
-
 .slider-wrapper input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
+  height: 8px;
+  background: #d3c3a3;
+  border-radius: 5px;
+  outline: none;
 }
-
-.generate-button-wrapper {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.generate-button-wrapper button {
-  padding: 12px 25px;
-  font-size: 1.3em;
-  font-weight: bold;
+.slider-wrapper input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #7a5c43;
   cursor: pointer;
-  border-radius: 8px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.2s;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
-
-.generate-button-wrapper button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
-.generate-button-wrapper button:not(:disabled):hover {
-  background-color: #0056b3;
+.slider-wrapper input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #7a5c43;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
 
 
-/* === グリッドレイアウトのためのCSS === */
-
-.supply-display {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5つの均等な列を作成 */
-  grid-template-rows: repeat(2, auto);    /* 2つの行を作成、高さは自動 */
-  gap: 20px; /* カード間の余白 */
-  max-width: 1400px; /* あまりに画面が広い時に広がりすぎないように */
-  margin: 0 auto; /* 中央寄せ */
-}
-
-/* === 禁止・必須カードフィルターのためのCSS (追記) === */
-
-.selection-filters {
-  display: flex;
-  gap: 20px;
-}
-
-.select-wrapper {
-  flex: 1;
-  text-align: left;
-}
-
-.select-wrapper p {
-  font-size: 0.9em;
-  color: #666;
-  margin: 0 0 5px 0;
-}
-
-.card-select {
-  width: 100%;
-  height: 150px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 5px;
-}
-
-.card-select option {
-  padding: 4px 8px;
-}
-
-.card-select option:checked {
-  background: #007bff;
-  color: white;
-}
-
-/* === 禁止・必須カードリストのためのCSS (追記) === */
-
-.filter-section p {
-  font-size: 0.9em;
-  color: #666;
-  margin: 0 0 5px 0;
-  text-align: left;
-}
-
+/* --- 禁止・必須カードリスト --- */
 .card-status-list {
   display: flex;
   flex-wrap: wrap;
@@ -176,34 +142,87 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px;
-  max-height: 200px; /* ある程度の高さでスクロールバーを出す */
+  max-height: 200px;
   overflow-y: auto;
+  background-image: url('https://www.transparenttextures.com/patterns/old-paper-2.png');
 }
 
 .card-status-item {
-  padding: 4px 8px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  font-size: 0.85em; /* 文字を少し小さく */
+  padding: 4px 10px;
+  border: 1px solid #c9b89b;
+  border-radius: 5px;
+  font-size: 0.9em;
   cursor: pointer;
-  user-select: none; /* テキスト選択を無効化 */
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  
-  /* デフォルト状態 (none) */
-  background-color: #fff;
-  color: #333;
+  user-select: none;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #4a2c2a;
 }
-
-/* 必須カード (required) のスタイル */
 .card-status-item.required {
-  background-color: #e6ffed; /* 薄い緑 */
-  border-color: #a3e9a4;
-  color: #256029;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  font-weight: bold;
+}
+.card-status-item.banned {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+  text-decoration: line-through;
 }
 
-/* 禁止カード (banned) のスタイル */
-.card-status-item.banned {
-  background-color: #ffeded; /* 薄い赤 */
-  border-color: #f7a8a8;
-  color: #a33a3a;
+
+/* --- 生成ボタン --- */
+.generate-button-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+.generate-button-wrapper button {
+  padding: 12px 30px;
+  font-size: 1.3em;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #5a3e2b;
+  border-bottom: 3px solid #5a3e2b;
+  background: linear-gradient(to bottom, #d2b48c, #c1a37c);
+  color: #fff;
+  text-shadow: 1px 1px 2px #5a3e2b;
+  transition: all 0.1s ease-in-out;
+}
+.generate-button-wrapper button:not(:disabled):hover {
+  background: linear-gradient(to bottom, #c1a37c, #b0926b);
+}
+.generate-button-wrapper button:not(:disabled):active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+.generate-button-wrapper button:disabled {
+  background: #b0a698;
+  color: #777;
+  border-color: #999;
+  border-bottom-width: 1px;
+  cursor: not-allowed;
+}
+
+
+/* --- サプライ表示エリア --- */
+.supply-display {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 画面幅に応じて列数を自動調整 */
+  gap: 25px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* エラーメッセージ */
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 8px;
+  grid-column: 1 / -1; /* グリッドレイアウトで横幅いっぱい使う */
 }
