@@ -21,3 +21,9 @@ yarn-error.log*
 # misc
 .DS_Store
 Thumbs.db
+
+# homepage img
+img
+
+# memo
+memo.txt
