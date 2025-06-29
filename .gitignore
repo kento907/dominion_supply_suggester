@@ -23,7 +23,7 @@ yarn-error.log*
 Thumbs.db
 
 # homepage img
-img
+/img
 
 # memo
 memo.txt
