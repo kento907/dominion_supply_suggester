@@ -16,7 +16,8 @@ function App() {
 
   const fetchData = () => {
     setAppState('loading');
-    fetch('http://localhost:5001/api/cards')
+    fetch('/api/cards')
+    // fetch('http://localhost:5001/api/cards')
       .then(res => { if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`); return res.json(); })
       .then(data => {
         setAllCards(data);
